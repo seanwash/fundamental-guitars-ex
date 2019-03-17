@@ -1,0 +1,51 @@
+<div class="flex justify-center">
+  <div class="w-full bg-white shadow rounded px-8 pt-6 pb-8 mb-4">
+    <%= form_for @changeset, @action, fn f -> %>
+      <%= if @changeset.action do %>
+        <div class="alert alert-error" role="alert">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= label f, :title, class: 'form-label' %>
+        <%= text_input f, :title, class: 'form-input' %>
+        <%= error_tag f, :title , class: 'form-error-msg' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label f, :slug, class: 'form-label' %>
+        <%= text_input f, :slug, class: 'form-input' %>
+        <%= error_tag f, :slug , class: 'form-error-msg' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label f, :source, 'Source (URL)', class: 'form-label' %>
+        <%= text_input f, :source, class: 'form-input'%>
+        <%= error_tag f, :source , class: 'form-error-msg' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label f, :duration, 'Duration (Minutes)', class: 'form-label' %>
+        <%= number_input f, :duration, class: 'form-input' %>
+        <%= error_tag f, :duration, class: 'form-error-msg' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label f, :description, class: 'form-label' %>
+        <%= text_input f, :description, class: 'form-input' %>
+        <%= error_tag f, :description, class: 'form-error-msg' %>
+      </div>
+
+      <div class="mb-4">
+        <%= label f, :body, class: 'form-label' %>
+        <%= textarea f, :body, class: 'form-input' %>
+        <%= error_tag f, :body , class: 'form-error-msg' %>
+      </div>
+
+      <div>
+        <%= submit "Save", class: 'btn btn-blue' %>
+      </div>
+    <% end %>
+  </div>
+</div>

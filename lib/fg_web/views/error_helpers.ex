@@ -8,9 +8,12 @@ defmodule FgWeb.ErrorHelpers do
   @doc """
   Generates tag for inlined form input errors.
   """
-  def error_tag(form, field) do
+  def error_tag(form, field, opts \\ []) do
+    opts = Enum.into(opts, %{})
+    class = Map.get(opts, :class, "")
+
     Enum.map(Keyword.get_values(form.errors, field), fn error ->
-      content_tag(:span, translate_error(error), class: "help-block")
+      content_tag(:span, translate_error(error), class: class)
     end)
   end
 

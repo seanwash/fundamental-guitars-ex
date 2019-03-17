@@ -1,0 +1,7 @@
+<h1 class="h1">New Tag</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.tag_path(@conn, :create)) %>
+
+<div class="mt-6">
+  <%= link "Back", to: Routes.tag_path(@conn, :index), class: 'btn btn-grey' %>
+</div>

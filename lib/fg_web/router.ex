@@ -17,6 +17,9 @@ defmodule FgWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/exercises", ExerciseController
+    resources "/tags", TagController
   end
 
   # Other scopes may use custom stacks.

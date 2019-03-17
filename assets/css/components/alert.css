@@ -1,0 +1,15 @@
+.alert {
+  @apply border px-4 py-3 rounded relative mb-4;
+}
+
+.alert-full-width {
+  @apply rounded-none border-r-0 border-l-0;
+}
+
+.alert-info {
+  @apply bg-blue-lightest border-blue-light text-blue-dark;
+}
+
+.alert-error {
+  @apply bg-red-lightest border-red-light text-red-dark;
+}

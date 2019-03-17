@@ -4,26 +4,45 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fg · Phoenix Framework</title>
+
+    <title>Fundamental</title>
+
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
-  <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-          </ul>
-        </nav>
-        <a href="http://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
-    </header>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render @view_module, @view_template, assigns %>
+  <body class="bg-grey-lighter">
+    <nav class="flex items-center justify-between flex-wrap bg-black p-6">
+      <div class="flex items-center flex-no-shrink text-white mr-6">
+        <a href="/" class="text-white no-underline font-semibold text-xl tracking-tight">Fundamental</a>
+      </div>
+
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <a href="/exercises" class="block mt-4 lg:inline-block lg:mt-0 text-grey-light hover:underline hover:text-white mr-4 no-underline">
+            Exercises
+          </a>
+          <a href="/tags" class="block mt-4 lg:inline-block lg:mt-0 text-grey-light hover:underline hover:text-white mr-4 no-underline">
+            Tags
+          </a>
+        </div>
+
+        <div>
+          <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded no-underline text-white border-white hover:border-transparent hover:text-grey hover:bg-white mt-4 lg:mt-0">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <main role="main">
+      <%= if get_flash(@conn, :info) do %>
+        <p class="alert alert-info alert-full-width" role="alert"><%= get_flash(@conn, :info) %></p>
+      <% end %>
+
+      <%= if get_flash(@conn, :error) do %>
+        <p class="alert alert-error alert-full-width" role="alert"><%= get_flash(@conn, :error) %></p>
+      <% end %>
+
+      <div class="container mx-auto">
+        <%= render @view_module, @view_template, assigns %>
+      </div>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>

@@ -1,0 +1,7 @@
+<h1 class="h1">New Exercise</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.exercise_path(@conn, :create)) %>
+
+<div>
+  <%= link "Back", to: Routes.exercise_path(@conn, :index), class: 'btn btn-grey' %>
+</div>

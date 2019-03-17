@@ -1,0 +1,38 @@
+<h1 class="h1">Listing Exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td class="table-head">Title</th>
+      <td class="table-head">Slug</th>
+      <td class="table-head">Source</th>
+      <td class="table-head">Duration</th>
+      <td class="table-head">Description</th>
+      <td class="table-head">Body</th>
+
+      <td class="table-head"></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for exercise <- @exercises do %>
+    <tr>
+      <td class="table-cell"><%= exercise.title %></td>
+      <td class="table-cell"><%= exercise.slug %></td>
+      <td class="table-cell"><%= exercise.source %></td>
+      <td class="table-cell"><%= exercise.duration %></td>
+      <td class="table-cell"><%= exercise.description %></td>
+      <td class="table-cell"><%= exercise.body %></td>
+
+      <td class="table-cell">
+        <%= link "Show", to: Routes.exercise_path(@conn, :show, exercise) %>
+        <%= link "Edit", to: Routes.exercise_path(@conn, :edit, exercise) %>
+        <%= link "Delete", to: Routes.exercise_path(@conn, :delete, exercise), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<div class="mt-6">
+  <%= link "New Exercise", to: Routes.exercise_path(@conn, :new), class: 'btn btn-blue' %>
+</div>

@@ -1,0 +1,7 @@
+.table-head {
+  @apply py-4 px-6 bg-white font-bold uppercase text-sm text-grey-dark border-b border-grey-light;
+}
+
+.table-cell {
+  @apply py-4 px-6 border-b border-grey-light;
+}
