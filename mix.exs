@@ -20,7 +20,7 @@ defmodule Fg.MixProject do
   def application do
     [
       mod: {Fg.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ueberauth, :ueberauth_twitter, :ueberauth_identity]
     ]
   end
 
@@ -42,7 +42,10 @@ defmodule Fg.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_twitter, "~> 0.2"},
+      {:ueberauth_identity, "~> 0.2"}
     ]
   end
 
@@ -56,7 +59,8 @@ defmodule Fg.MixProject do
     [
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate", "test"],
+      s: ["phx.server"]
     ]
   end
 end
