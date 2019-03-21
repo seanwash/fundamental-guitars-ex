@@ -43,3 +43,4 @@ npm-debug.log
 
 scratch.md
 /.elixir_ls
+.env
