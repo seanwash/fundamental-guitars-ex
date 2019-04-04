@@ -1,0 +1,11 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Phoenix Server",
+      "description": "",
+      "focus": true,
+      "command": "iex -S mix phx.server"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "editor.rulers": [
+    80
+  ],
+  "cSpell.words": [
+    "Bcrypt",
+    "Comeonin",
+    "certfile",
+    "deps",
+    "elixirc",
+    "gettext",
+    "hashpwsalt",
+    "keyfile",
+    "postgrex",
+    "priv",
+    "pubsub",
+    "selfsigned",
+    "ueberauth"
+  ],
+  "html.format.wrapLineLength": 80,
+  "editor.wordWrap": "wordWrapColumn"
+}
